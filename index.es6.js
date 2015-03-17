@@ -14,5 +14,7 @@ const highlight = (code, lang) =>
     || maybeValue(hljs.highlightAuto)(code)
     || ''
 
-export default md =>
+export default md => {
+  md.options.langPrefix = 'hljs language-'
   md.options.highlight = highlight
+}

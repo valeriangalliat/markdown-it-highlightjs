@@ -6,6 +6,6 @@ const html = md()
   .use(highlightjs)
   .render('```js\nconsole.log(42)\n```')
 
-equal(html, `<pre><code class="language-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">42</span>)
+equal(html, `<pre><code class="hljs language-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">42</span>)
 </code></pre>
 `)
