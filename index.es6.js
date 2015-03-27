@@ -1,5 +1,6 @@
 import flow from 'lodash.flow'
 import hljs from 'highlight.js'
+import { escapeHtml } from 'markdown-it/lib/common/utils'
 
 const maybe = f => (...args) => {
   try { return f(...args) }
@@ -15,6 +16,13 @@ const highlight = (code, lang) =>
     || ''
 
 export default md => {
-  md.options.langPrefix = 'hljs language-'
   md.options.highlight = highlight
+
+  const originalFence = md.renderer.rules.fence
+
+  md.renderer.rules.fence = function (...args) {
+    return originalFence.apply(this, args)
+      .replace('<code class="', '<code class="hljs ')
+      .replace('<code>', '<code class="hljs">')
+  }
 }
