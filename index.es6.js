@@ -1,6 +1,5 @@
 import flow from 'lodash.flow'
 import hljs from 'highlight.js'
-import { escapeHtml } from 'markdown-it/lib/common/utils'
 
 const maybe = f => (...args) => {
   try { return f(...args) }
