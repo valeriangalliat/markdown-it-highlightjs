@@ -25,3 +25,15 @@ equal(
   `<pre><code>test
 </code></pre>
 `)
+
+equal(
+  md().use(highlightjs).render('```\n<?php echo 42;\n```'),
+  `<pre><code class="hljs"><span class="php"><span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-keyword">echo</span> <span class="hljs-number">42</span>;
+</span></code></pre>
+`)
+
+equal(
+  md().use(highlightjs, { auto: false }).render('```\n<?php echo 42;\n```'),
+  `<pre><code class="hljs">&lt;?php echo 42;
+</code></pre>
+`)

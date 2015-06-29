@@ -8,6 +8,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
   option.
 * Never automatically detect the language if a language was specified,
   even if not recognized.
+* Add an `auto` option to control if fenced code without language should
+  be automatically highlighted.
 
 ## [1.1.2] - 2015-05-25
 * Update license format in `package.json`.

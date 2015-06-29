@@ -19,4 +19,5 @@ The `opts` object can contain:
 
 Name   | Description                                                             | Default
 -------|-------------------------------------------------------------------------|--------
+`auto` | Whether to automatically detect language if not specified.              | `true`
 `code` | Whether to add the `hljs` class to raw code blocks (not fenced blocks). | `true`
