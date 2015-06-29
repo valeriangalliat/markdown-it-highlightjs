@@ -3,6 +3,9 @@
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
+* Also add the `hljs` class to indented code blocks (together with
+  fenced code blocks). This new behavior can be disabled with the `code`
+  option.
 
 ## [1.1.2] - 2015-05-25
 * Update license format in `package.json`.

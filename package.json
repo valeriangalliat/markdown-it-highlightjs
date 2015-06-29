@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "highlight.js": "^8.4.0",
+    "lodash.assign": "^3.2.0",
     "lodash.flow": "^3.1.0"
   },
   "devDependencies": {

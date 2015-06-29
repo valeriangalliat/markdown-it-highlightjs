@@ -10,7 +10,13 @@ Usage
 
 ```js
 const md = require('markdown-it')()
-  .use(require('markdown-it-highlightjs'))
+  .use(require('markdown-it-highlightjs'), opts)
 
 // All code blocks will be highlighted.
 ```
+
+The `opts` object can contain:
+
+Name   | Description                                                             | Default
+-------|-------------------------------------------------------------------------|--------
+`code` | Whether to add the `hljs` class to raw code blocks (not fenced blocks). | `true`
