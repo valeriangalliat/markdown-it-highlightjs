@@ -13,10 +13,11 @@ const maybe = f => (...args) => {
 const get = name => x => x[name]
 const maybeValue = f => maybe(flow(f, get('value')))
 
+// Highlight with given language or automatically.
 const highlight = (code, lang) =>
-  maybeValue(hljs.highlight)(lang, code, true) ||
-    maybeValue(hljs.highlightAuto)(code) ||
-    ''
+  lang
+    ? maybeValue(hljs.highlight)(lang, code, true) || ''
+    : maybeValue(hljs.highlightAuto)(code) || ''
 
 // Wrap a render function to add `hljs` class to code blocks.
 const wrap = render =>

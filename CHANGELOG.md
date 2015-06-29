@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * Also add the `hljs` class to indented code blocks (together with
   fenced code blocks). This new behavior can be disabled with the `code`
   option.
+* Never automatically detect the language if a language was specified,
+  even if not recognized.
 
 ## [1.1.2] - 2015-05-25
 * Update license format in `package.json`.
