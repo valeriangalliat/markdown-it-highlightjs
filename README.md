@@ -3,7 +3,7 @@
 > Preset to use [highlight.js] with [markdown-it].
 
 [highlight.js]: https://highlightjs.org/
-[markdown-it]: https://github.com/markdown-it/markdown-it/tree/master
+[markdown-it]: https://github.com/markdown-it/markdown-it
 
 Usage
 -----
