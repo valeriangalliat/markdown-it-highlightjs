@@ -27,7 +27,7 @@
     "test": "npm run lint && npm run build && babel-node test.js"
   },
   "dependencies": {
-    "highlight.js": "^8.4.0",
+    "highlight.js": "^9.9.0",
     "lodash.assign": "^3.2.0",
     "lodash.flow": "^3.1.0"
   },
