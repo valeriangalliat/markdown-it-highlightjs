@@ -1,6 +1,6 @@
-import { equal } from 'assert'
-import md from 'markdown-it'
-import highlightjs from './'
+const { equal } = require('assert')
+const md = require('markdown-it')
+const highlightjs = require('./')
 
 equal(
   md().use(highlightjs).render('```js\nconsole.log(42)\n```'),

@@ -1,27 +1,22 @@
-import assign from 'lodash.assign'
-import flow from 'lodash.flow'
-import hljs from 'highlight.js'
+const hljs = require('highlight.js')
 
-const maybe = f => (...args) => {
+const maybe = f => {
   try {
-    return f(...args)
+    return f()
   } catch (e) {
     return false
   }
 }
 
-const get = name => x => x[name]
-const maybeValue = f => maybe(flow(f, get('value')))
-
 // Highlight with given language.
 const highlight = (code, lang) =>
-  maybeValue(hljs.highlight)(lang, code, true) || ''
+  maybe(() => hljs.highlight(lang, code, true).value) || ''
 
 // Highlight with given language or automatically.
 const highlightAuto = (code, lang) =>
   lang
     ? highlight(code, lang)
-    : maybeValue(hljs.highlightAuto)(code) || ''
+    : maybe(() => hljs.highlightAuto(code).value) || ''
 
 // Wrap a render function to add `hljs` class to code blocks.
 const wrap = render =>
@@ -32,7 +27,7 @@ const wrap = render =>
   }
 
 const highlightjs = (md, opts) => {
-  opts = assign({}, highlightjs.defaults, opts)
+  opts = Object.assign({}, highlightjs.defaults, opts)
 
   md.options.highlight = opts.auto ? highlightAuto : highlight
   md.renderer.rules.fence = wrap(md.renderer.rules.fence)
@@ -47,4 +42,4 @@ highlightjs.defaults = {
   code: true
 }
 
-export default highlightjs
+module.exports = highlightjs
