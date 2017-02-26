@@ -10,8 +10,8 @@ equal(
 
 equal(
   md().use(highlightjs).render('```\ntest\n```'),
-  `<pre><code class="hljs"><span class="hljs-built_in">test</span>
-</code></pre>
+  `<pre><code class="hljs"><span class="hljs-keyword">test
+</span></code></pre>
 `)
 
 equal(
@@ -28,7 +28,7 @@ equal(
 
 equal(
   md().use(highlightjs).render('```\n<?php echo 42;\n```'),
-  `<pre><code class="hljs"><span class="php"><span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-keyword">echo</span> <span class="hljs-number">42</span>;
+  `<pre><code class="hljs"><span class="php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">echo</span> <span class="hljs-number">42</span>;
 </span></code></pre>
 `)
 
