@@ -22,14 +22,17 @@
   },
   "scripts": {
     "lint": "standard",
-    "prepublish": "npm test",
-    "test": "npm run lint && node test"
+    "build": "babel index.es6.js --out-file index.js --presets=env",
+    "prepublish": "npm run build && npm test",
+    "test": "npm run lint && npm run build && node test"
   },
   "dependencies": {
     "highlight.js": "^9.9.0",
     "lodash.flow": "^3.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "markdown-it": "^8.3.0",
     "standard": "^8.6.0"
   }
