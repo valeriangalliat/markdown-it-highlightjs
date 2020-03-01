@@ -17,7 +17,19 @@ const md = require('markdown-it')()
 
 The `opts` object can contain:
 
-Name   | Description                                                             | Default
--------|-------------------------------------------------------------------------|--------
-`auto` | Whether to automatically detect language if not specified.              | `true`
-`code` | Whether to add the `hljs` class to raw code blocks (not fenced blocks). | `true`
+Name       | Type | Description                                                                | Default
+-----------|------|----------------------------------------------------------------------------|--------
+`auto`     | boolean | Whether to automatically detect language if not specified.              | `true`
+`code`     | boolean | Whether to add the `hljs` class to raw code blocks (not fenced blocks). | `true`
+`register` | object  | Register other languages which are not included in the standard pack.   | null
+
+### Register languages
+
+```js
+const md = require('markdown-it')()
+  .use(require('markdown-it-highlightjs'), {
+    register: {
+      cypher: require('highlightjs-cypher')
+    }
+  })
+```

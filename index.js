@@ -8,6 +8,10 @@ const maybe = f => {
   }
 }
 
+// allow registration of other languages
+const registerLangs = (register) => register &&
+  Object.entries(register).map(([lang, pack]) => { hljs.registerLanguage(lang, pack) })
+
 // Highlight with given language.
 const highlight = (code, lang) =>
   maybe(() => hljs.highlight(lang, code, true).value) || ''
@@ -28,6 +32,7 @@ const wrap = render =>
 
 const highlightjs = (md, opts) => {
   opts = Object.assign({}, highlightjs.defaults, opts)
+  registerLangs(opts.register)
 
   md.options.highlight = opts.auto ? highlightAuto : highlight
   md.renderer.rules.fence = wrap(md.renderer.rules.fence)
