@@ -37,3 +37,10 @@ equal(
   `<pre><code class="hljs">&lt;?php echo 42;
 </code></pre>
 `)
+
+equal(
+  md().use(highlightjs, { register: { test: require('highlight.js/lib/languages/sql') } })
+    .render('```test\nSELECT * FROM TABLE;\n```'),
+  '<pre><code class="hljs language-test"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">TABLE</span>;\n' +
+    '</code></pre>\n'
+)
