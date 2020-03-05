@@ -8,7 +8,7 @@ const maybe = f => {
   }
 }
 
-// allow registration of other languages
+// Allow registration of other languages.
 const registerLangs = (register) => register &&
   Object.entries(register).map(([lang, pack]) => { hljs.registerLanguage(lang, pack) })
 
