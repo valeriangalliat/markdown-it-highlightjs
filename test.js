@@ -1,4 +1,4 @@
-const { equal } = require('assert')
+const { strictEqual: equal } = require('assert')
 const md = require('markdown-it')
 const highlightjs = require('./')
 
