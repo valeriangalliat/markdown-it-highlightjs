@@ -44,7 +44,7 @@ const highlightjs = (md, opts) => {
   if (opts.inline) {
     // Match kramdown- or pandoc-style language specifier.
     // e.g. `code`{:.ruby} or `code`{.haskell}
-    const re = new RegExp('^{:?.([^}]+)}')
+    const re = new RegExp('^{:?\\.([^}]+)}')
 
     md.renderer.rules.code_inline = (tokens, idx) => {
       const code = tokens[idx]
