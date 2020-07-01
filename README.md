@@ -50,7 +50,7 @@ You can specify the language for inline code using [Pandoc syntax](https://pando
 `x=4`{.js}
 ```
 
-or [Kramdown IAL syntax](https://kramdown.gettalong.org/syntax.html#inline-attribute-lists)
+or [Kramdown IAL syntax](https://kramdown.gettalong.org/syntax.html#inline-attribute-lists):
 
 ```markdown
 `x=4`{:.js}
