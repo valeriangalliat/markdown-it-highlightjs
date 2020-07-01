@@ -22,6 +22,7 @@ Name       | Type | Description                                                 
 `auto`     | boolean | Whether to automatically detect language if not specified.              | `true`
 `code`     | boolean | Whether to add the `hljs` class to raw code blocks (not fenced blocks). | `true`
 `register` | object  | Register other languages which are not included in the standard pack.   | `null`
+`inline`   | boolean | Whether to highlight inline code.                                       | `false`
 
 ### Register languages
 
@@ -33,3 +34,26 @@ const md = require('markdown-it')()
     }
   })
 ```
+
+### Inline code highlighting
+
+You can enable inline code highlighting by setting `inline` to true:
+
+```js
+const md = require('markdown-it')()
+  .use(require('markdown-it-highlightjs'), { inline: true })
+```
+
+You can specify the language for inline code using [Pandoc syntax](https://pandoc.org/MANUAL.html#extension-inline_code_attributes):
+
+```markdown
+`x=4`{.js}
+```
+
+or [Kramdown IAL syntax](https://kramdown.gettalong.org/syntax.html#inline-attribute-lists):
+
+```markdown
+`x=4`{:.js}
+```
+
+If you do not specify a language, then highlight.js will attempt to guess the language if `auto` is true (which it is by default).
