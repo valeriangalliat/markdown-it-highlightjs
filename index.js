@@ -1,6 +1,6 @@
 const hljs = require('highlight.js')
 
-const maybe = f => {
+function maybe (f) {
   try {
     return f()
   } catch (e) {
@@ -30,6 +30,30 @@ const wrap = render =>
       .replace('<code>', '<code class="hljs">')
   }
 
+function inlineCodeRenderer (tokens, idx, options) {
+  const code = tokens[idx]
+  const next = tokens[idx + 1]
+  let lang
+
+  if (next && next.type === 'text') {
+    // Match kramdown- or pandoc-style language specifier.
+    // e.g. `code`{:.ruby} or `code`{.haskell}
+    const match = /^{:?\.([^}]+)}/.exec(next.content)
+
+    if (match) {
+      lang = match[1]
+
+      // Remove the language specification from text following the code.
+      next.content = next.content.slice(match[0].length)
+    }
+  }
+
+  const highlighted = options.highlight(code.content, lang)
+  const cls = lang ? ` class="language-${lang}"` : ''
+
+  return `<code${cls}>${highlighted}</code>`
+}
+
 const highlightjs = (md, opts) => {
   opts = Object.assign({}, highlightjs.defaults, opts)
   registerLangs(opts.register)
@@ -42,34 +66,14 @@ const highlightjs = (md, opts) => {
   }
 
   if (opts.inline) {
-    // Match kramdown- or pandoc-style language specifier.
-    // e.g. `code`{:.ruby} or `code`{.haskell}
-    const re = new RegExp('^{:?\\.([^}]+)}')
-
-    md.renderer.rules.code_inline = (tokens, idx) => {
-      const code = tokens[idx]
-      const next = tokens[idx + 1]
-      let lang = ''
-      if (next && next.type === 'text') {
-        const match = re.exec(next.content)
-        if (match) {
-          lang = match[1]
-
-          // Remove the language specification from text following the code.
-          next.content = next.content.slice(match[0].length)
-        }
-      }
-
-      const highlighted = md.options.highlight(code.content, lang)
-      const cls = lang ? ` class="language-${lang}"` : ''
-      return `<code${cls}>${highlighted}</code>`
-    }
+    md.renderer.rules.code_inline = inlineCodeRenderer
   }
 }
 
 highlightjs.defaults = {
   auto: true,
-  code: true
+  code: true,
+  inline: false
 }
 
 module.exports = highlightjs
