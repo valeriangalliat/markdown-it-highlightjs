@@ -4,6 +4,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 
+## [3.2.0] - 2020-06-01
+* Support inline code highlighting. ([#10])
+
+## [3.1.0] - 2020-03-05
+* Update dependencies. ([#6])
+* Fix "unknown language" error. ([#8])
+* Allow to register extra languages. ([#9])
+
 ## [3.0.0] - 2017-02-26
 * Update highlight.js. ([#2])
 * Drop Babel. This drops support for Node.js versions that doesn't
@@ -30,7 +38,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 - 2015-03-17
 * Initial release.
 
-[unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.0.0...HEAD
+[unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.1.0...v3.2.0
+[3.1.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v1.1.2...v2.0.0
 [1.1.2]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v1.1.1...v1.1.2
@@ -38,3 +48,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.1.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v1.0.0...v1.1.0
 
 [#2]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/2
+[#6]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/6
+[#8]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/8
+[#9]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/9
+[#10]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/10
