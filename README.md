@@ -22,6 +22,7 @@ Name       | Type | Description                                                 
 `auto`     | boolean | Whether to automatically detect language if not specified.              | `true`
 `code`     | boolean | Whether to add the `hljs` class to raw code blocks (not fenced blocks). | `true`
 `register` | object  | Register other languages which are not included in the standard pack.   | `null`
+`inline`   | boolean | Highlight inline code blocks                                            | `null`
 
 ### Register languages
 
