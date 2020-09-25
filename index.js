@@ -49,7 +49,7 @@ function inlineCodeRenderer (tokens, idx, options) {
   }
 
   const highlighted = options.highlight(code.content, lang)
-  const cls = lang ? ` class="${options.langPrefix + lang}"` : ''
+  const cls = lang ? ` class="${options.langPrefix}${lang}"` : ''
 
   return `<code${cls}>${highlighted}</code>`
 }
