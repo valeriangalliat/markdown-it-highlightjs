@@ -55,6 +55,11 @@ equal(
   md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`{:.js}'),
   '<code class="language-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">42</span>)</code>')
 
+// Escape invalid lang characters
+equal(
+  md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`{:."><img onerror=alert(1) src=.>js}'),
+  '<code>console.<span class="hljs-built_in">log</span>(<span class="hljs-number">42</span>)</code>{:.&quot;&gt;&lt;img onerror=alert(1) src=.&gt;js}')
+
 // Inline is not enabled by default
 equal(
   md().use(highlightjs).renderInline('`console.log(42)`{.js}'),

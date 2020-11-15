@@ -38,7 +38,7 @@ function inlineCodeRenderer (tokens, idx, options) {
   if (next && next.type === 'text') {
     // Match kramdown- or pandoc-style language specifier.
     // e.g. `code`{:.ruby} or `code`{.haskell}
-    const match = /^{:?\.([^}]+)}/.exec(next.content)
+    const match = /^{:?\.([^}"'<>&]+)}/.exec(next.content)
 
     if (match) {
       lang = match[1]
