@@ -30,7 +30,7 @@ const wrap = render =>
       .replace('<code>', '<code class="hljs">')
   }
 
-function inlineCodeRenderer (tokens, idx, options) {
+function inlineCodeRenderer (md, tokens, idx, options) {
   const code = tokens[idx]
   const next = tokens[idx + 1]
   let lang
@@ -38,7 +38,7 @@ function inlineCodeRenderer (tokens, idx, options) {
   if (next && next.type === 'text') {
     // Match kramdown- or pandoc-style language specifier.
     // e.g. `code`{:.ruby} or `code`{.haskell}
-    const match = /^{:?\.([^}"'<>&]+)}/.exec(next.content)
+    const match = /^{:?\.([^}]+)}/.exec(next.content)
 
     if (match) {
       lang = match[1]
@@ -49,7 +49,7 @@ function inlineCodeRenderer (tokens, idx, options) {
   }
 
   const highlighted = options.highlight(code.content, lang)
-  const cls = lang ? ` class="${options.langPrefix}${lang}"` : ''
+  const cls = lang ? ` class="${options.langPrefix}${md.utils.escapeHtml(lang)}"` : ''
 
   return `<code${cls}>${highlighted}</code>`
 }
@@ -66,7 +66,7 @@ const highlightjs = (md, opts) => {
   }
 
   if (opts.inline) {
-    md.renderer.rules.code_inline = inlineCodeRenderer
+    md.renderer.rules.code_inline = inlineCodeRenderer.bind(null, md)
   }
 }
 
