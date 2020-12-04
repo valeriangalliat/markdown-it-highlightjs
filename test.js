@@ -3,6 +3,22 @@ const md = require('markdown-it')
 const highlightjs = require('./')
 
 equal(
+  (() => {
+    try {
+      return md().use(require('./core'))
+    } catch (ex) {
+      return ex.message
+    }
+  })(),
+  'A hljs instance is required.'
+)
+
+equal(
+  md().use(highlightjs, { hljs: require('highlight.js/lib/core') }).render('```js\nconsole.log(42)\n```'),
+  `<pre><code class="hljs language-js">console.log(42)\n</code></pre>
+`)
+
+equal(
   md().use(highlightjs).render('```js\nconsole.log(42)\n```'),
   `<pre><code class="hljs language-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">42</span>)
 </code></pre>
