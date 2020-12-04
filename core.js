@@ -6,20 +6,18 @@ function maybe (f) {
   }
 }
 
-let hljs
-
 // Allow registration of other languages.
-const registerLangs = (register) => register &&
+const registerLangs = (hljs, register) => register &&
   Object.entries(register).map(([lang, pack]) => { hljs.registerLanguage(lang, pack) })
 
 // Highlight with given language.
-const highlight = (code, lang) =>
+const highlight = (hljs, code, lang) =>
   maybe(() => hljs.highlight(lang || 'plaintext', code, true).value) || ''
 
 // Highlight with given language or automatically.
-const highlightAuto = (code, lang) =>
+const highlightAuto = (hljs, code, lang) =>
   lang
-    ? highlight(code, lang)
+    ? highlight(hljs, code, lang)
     : maybe(() => hljs.highlightAuto(code).value) || ''
 
 // Wrap a render function to add `hljs` class to code blocks.
@@ -55,15 +53,13 @@ function inlineCodeRenderer (md, tokens, idx, options) {
 }
 
 module.exports = (md, opts) => {
-  opts = Object.assign({}, opts)
-  hljs = opts.hljs
-  if (!hljs) {
-    throw new Error('A hljs instance is required.')
+  if (!opts || !opts.hljs) {
+    throw new Error('Please pass a highlight.js instance for the required `hljs` option.')
   }
 
-  registerLangs(opts.register)
+  registerLangs(opts.hljs, opts.register)
 
-  md.options.highlight = opts.auto ? highlightAuto : highlight
+  md.options.highlight = (opts.auto ? highlightAuto : highlight).bind(null, opts.hljs)
   md.renderer.rules.fence = wrap(md.renderer.rules.fence)
 
   if (opts.code) {

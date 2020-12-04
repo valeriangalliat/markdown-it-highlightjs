@@ -10,7 +10,7 @@ equal(
       return ex.message
     }
   })(),
-  'A hljs instance is required.'
+  'Please pass a highlight.js instance for the required `hljs` option.'
 )
 
 equal(
