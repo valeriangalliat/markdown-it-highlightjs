@@ -27,11 +27,11 @@
     "test": "npm run lint && node test"
   },
   "dependencies": {
-    "highlight.js": "^10.2.0",
+    "highlight.js": "^10.7.2",
     "lodash.flow": "^3.5.0"
   },
   "devDependencies": {
     "markdown-it": "^10.0.0",
-    "standard": "^14.3.1"
+    "standard": "^14.3.4"
   }
 }

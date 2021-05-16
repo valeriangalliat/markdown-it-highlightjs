@@ -57,7 +57,7 @@ equal(
 equal(
   md().use(highlightjs, { register: { test: require('highlight.js/lib/languages/sql') } })
     .render('```test\nSELECT * FROM TABLE;\n```'),
-  `<pre><code class="hljs language-test"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">TABLE</span>;
+  `<pre><code class="hljs language-test"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">TABLE</span>;
 </code></pre>
 `)
 
