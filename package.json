@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-highlightjs",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Preset to use highlight.js with markdown-it.",
   "keywords": [
     "markdown-it-plugin"
