@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 
+## [3.5.0] - 2021-05-16
+* Update to use new highlight.js API after old way got deprecated. ([#20])
+
 ## [3.4.0] - 2020-12-04
 * Allow injecting the highlight.js instance. ([#15])
 
@@ -47,7 +50,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 - 2015-03-17
 * Initial release.
 
-[unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.4.0...HEAD
+[unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.5.0...HEAD
+[3.4.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.4.0...v3.5.0
 [3.4.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.3.1...v3.4.0
 [3.3.1]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.2.0...v3.3.0
@@ -67,3 +71,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [#11]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/11
 [#14]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/14
 [#15]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/15
+[#20]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/20
