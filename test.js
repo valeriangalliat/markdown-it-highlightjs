@@ -20,7 +20,7 @@ equal(
 
 equal(
   md().use(highlightjs).render('```js\nconsole.log(42)\n```'),
-  `<pre><code class="hljs language-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">42</span>)
+  `<pre><code class="hljs language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">42</span>)
 </code></pre>
 `)
 
@@ -64,12 +64,12 @@ equal(
 // Inline works with pandoc format e.g. `code`{.lang}
 equal(
   md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`{.js}'),
-  '<code class="language-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">42</span>)</code>')
+  '<code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">42</span>)</code>')
 
 // Inline works with kramdown format e.g. `code`{:.lang}
 equal(
   md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`{:.js}'),
-  '<code class="language-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">42</span>)</code>')
+  '<code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">42</span>)</code>')
 
 // Escape language class
 equal(
