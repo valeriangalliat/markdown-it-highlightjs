@@ -2,7 +2,10 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased][unreleased]
+## [Unreleased]
+
+## [3.6.0] - 2021-05-16
+* Update highlight.js to version 11. ([#22])
 
 ## [3.5.0] - 2021-05-16
 * Update to use new highlight.js API after old way got deprecated. ([#20])
@@ -47,11 +50,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.1.0] - 2015-03-17
 * Add `hljs` class and `langPrefix` to code blocks.
 
-## 1.0.0 - 2015-03-17
+## [1.0.0] - 2015-03-17
 * Initial release.
 
-[unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.5.0...HEAD
-[3.4.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.4.0...v3.5.0
+[Unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.6.0...HEAD
+[3.6.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.5.0...v3.6.0
+[3.5.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.4.0...v3.5.0
 [3.4.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.3.1...v3.4.0
 [3.3.1]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.2.0...v3.3.0
@@ -62,6 +66,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.1.2]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/tree/v1.0.0
 
 [#2]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/2
 [#6]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/6
@@ -72,3 +77,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [#14]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/14
 [#15]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/15
 [#20]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/20
+[#22]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/22
