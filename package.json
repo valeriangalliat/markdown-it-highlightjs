@@ -5,22 +5,15 @@
   "keywords": [
     "markdown-it-plugin"
   ],
-  "homepage": "https://github.com/valeriangalliat/markdown-it-highlightjs",
   "license": "Unlicense",
-  "author": {
-    "name": "Valérian Galliat",
-    "url": "http://val.codejam.info/"
-  },
+  "author": "Val (https://val.codejam.info)",
   "files": [
     "README.md",
     "UNLICENSE",
     "core.js",
     "index.js"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/valeriangalliat/markdown-it-highlightjs.git"
-  },
+  "repository": "valeriangalliat/markdown-it-highlightjs",
   "scripts": {
     "lint": "standard",
     "prepublish": "npm test",
