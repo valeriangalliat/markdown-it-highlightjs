@@ -86,21 +86,21 @@ describe('markdown-it-highlightjs', () => {
   it('inline with Pandoc format', () => {
     assert.equal(
       md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`{.js}'),
-      '<code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">42</span>)</code>'
+      '<code class="hljs language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">42</span>)</code>'
     )
   })
 
   it('inline with kramdown format', () => {
     assert.equal(
       md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`{:.js}'),
-      '<code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">42</span>)</code>'
+      '<code class="hljs language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">42</span>)</code>'
     )
   })
 
   it('inline escape language class', () => {
     assert.equal(
       md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`{:."><img onerror=alert(1) src=.>js}'),
-      '<code class="language-&quot;&gt;&lt;img onerror=alert(1) src=.&gt;js"></code>'
+      '<code class="hljs language-&quot;&gt;&lt;img onerror=alert(1) src=.&gt;js"></code>'
     )
   })
 
@@ -114,14 +114,14 @@ describe('markdown-it-highlightjs', () => {
   it('inline auto', () => {
     assert.equal(
       md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`'),
-      '<code>console.<span class="hljs-built_in">log</span>(<span class="hljs-number">42</span>)</code>'
+      '<code class="hljs">console.<span class="hljs-built_in">log</span>(<span class="hljs-number">42</span>)</code>'
     )
   })
 
   it('inline no auto', () => {
     assert.equal(
       md().use(highlightjs, { inline: true, auto: false }).renderInline('`console.log(42)`'),
-      '<code>console.log(42)</code>'
+      '<code class="hljs">console.log(42)</code>'
     )
   })
 })

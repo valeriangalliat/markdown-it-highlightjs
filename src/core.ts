@@ -154,7 +154,7 @@ export default function core (md: MarkdownIt, opts?: HighlightOptions): void {
 
   if (optsWithDefaults.inline) {
     md.core.ruler.before('linkify', 'inline_code_language', inlineCodeLanguageRule)
-    md.renderer.rules.code_inline = inlineCodeRenderer
+    md.renderer.rules.code_inline = wrapCodeRenderer(inlineCodeRenderer)
   }
 }
 
