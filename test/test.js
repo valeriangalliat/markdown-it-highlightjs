@@ -115,7 +115,7 @@ describe('markdown-it-highlightjs', () => {
   it('inline auto', () => {
     assert.equal(
       md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`'),
-      '<code class="hljs">console.<span class="hljs-built_in">log</span>(<span class="hljs-number">42</span>)</code>'
+      '<code class="hljs"><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">42</span>)</code>'
     )
   })
 

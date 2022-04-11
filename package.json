@@ -19,7 +19,7 @@
     "type-declarations": "tsc --project tsconfig.build.json --declaration --emitDeclarationOnly --outDir types"
   },
   "dependencies": {
-    "highlight.js": "^11.3.1"
+    "highlight.js": "^11.5.1"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
