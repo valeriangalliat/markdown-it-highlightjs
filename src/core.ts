@@ -2,7 +2,6 @@ import MarkdownIt from 'markdown-it'
 import Renderer from 'markdown-it/lib/renderer'
 import StateCore from 'markdown-it/lib/rules_core/state_core'
 import Token from 'markdown-it/lib/token'
-import { escapeHtml } from 'markdown-it/lib/common/utils'
 import { HLJSApi, LanguageFn } from 'highlight.js'
 
 export interface HighlightOptions {
@@ -48,24 +47,24 @@ function registerLangs (hljs: HLJSApi, register: { [lang: string]: LanguageFn })
 }
 
 // Highlight with given language.
-function highlight (hljs: HLJSApi, ignoreIllegals: boolean, code: string, lang: string): string {
+function highlight (md: MarkdownIt, hljs: HLJSApi, ignoreIllegals: boolean, code: string, lang: string): string {
   try {
     return hljs.highlight(code, { language: lang !== '' ? lang : 'plaintext', ignoreIllegals }).value
   } catch (e) {
-    return escapeHtml(code)
+    return md.utils.escapeHtml(code)
   }
 }
 
 // Highlight with given language or automatically.
-function highlightAuto (hljs: HLJSApi, ignoreIllegals: boolean, code: string, lang: string): string {
+function highlightAuto (md: MarkdownIt, hljs: HLJSApi, ignoreIllegals: boolean, code: string, lang: string): string {
   if (lang !== '') {
-    return highlight(hljs, ignoreIllegals, code, lang)
+    return highlight(md, hljs, ignoreIllegals, code, lang)
   }
 
   try {
     return hljs.highlightAuto(code).value
   } catch (e) {
-    return escapeHtml(code)
+    return md.utils.escapeHtml(code)
   }
 }
 // Wrap a render function to add `hljs` class to code blocks.
@@ -143,7 +142,7 @@ export default function core (md: MarkdownIt, opts?: HighlightOptions): void {
     registerLangs(optsWithDefaults.hljs, optsWithDefaults.register)
   }
 
-  md.options.highlight = (optsWithDefaults.auto ? highlightAuto : highlight).bind(null, optsWithDefaults.hljs, optsWithDefaults.ignoreIllegals)
+  md.options.highlight = (optsWithDefaults.auto ? highlightAuto : highlight).bind(null, md, optsWithDefaults.hljs, optsWithDefaults.ignoreIllegals)
 
   if (md.renderer.rules.fence != null) {
     md.renderer.rules.fence = wrapCodeRenderer(md.renderer.rules.fence)
