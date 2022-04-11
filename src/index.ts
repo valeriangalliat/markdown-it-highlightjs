@@ -3,7 +3,7 @@ import hljs from 'highlight.js'
 import core, { HighlightOptions } from './core.js'
 
 export default function highlightjs (md: MarkdownIt, opts?: HighlightOptions): void {
-  opts = { ...opts }
+  opts = { ...highlightjs.defaults, ...opts }
 
   if (opts.hljs == null) {
     opts.hljs = hljs
@@ -12,4 +12,9 @@ export default function highlightjs (md: MarkdownIt, opts?: HighlightOptions): v
   return core(md, opts)
 }
 
-highlightjs.defaults = core.defaults
+highlightjs.defaults = {
+  auto: true,
+  code: true,
+  inline: false,
+  ignoreIllegals: true
+}

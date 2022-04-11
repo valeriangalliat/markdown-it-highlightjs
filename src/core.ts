@@ -160,8 +160,8 @@ export default function core (md: MarkdownIt, opts?: HighlightOptions): void {
 }
 
 core.defaults = {
-  auto: true,
-  code: true,
+  auto: false,
+  code: false,
   inline: false,
-  ignoreIllegals: true
+  ignoreIllegals: false
 }
