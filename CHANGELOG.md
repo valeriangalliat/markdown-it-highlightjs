@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [4.0.1] - 2022-04-11
+* Fix `dist` directory not being published.
+
 ## [4.0.0] - 2022-04-11
 * Rewrite in TypeScript. ([#21])
 * Use Mocha as test runner.
