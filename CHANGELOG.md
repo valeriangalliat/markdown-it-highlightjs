@@ -4,6 +4,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [4.0.0] - 2022-04-11
+* Rewrite in TypeScript. ([#21])
+* Use Mocha as test runner.
+* Compatibility with markdown-it-attrs. ([#24])
+* **Potentially breaking:** add `hljs` class to inline code when inline
+  mode is enabled. ([#25])
+* **Potentially breaking:** return plain code when highlighting fails in
+  inline mode (instead of an empty string).
+
 ## [3.6.0] - 2021-05-16
 * Update highlight.js to version 11. ([#22])
 

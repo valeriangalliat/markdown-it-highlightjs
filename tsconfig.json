@@ -1,0 +1,10 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "buildOptions": {
+    "downlevelIterator": true
+  },
+  "include": [
+    "src/*.ts",
+    "test/*.ts"
+  ]
+}
