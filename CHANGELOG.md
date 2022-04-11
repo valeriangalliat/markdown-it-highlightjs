@@ -16,7 +16,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * **Potentially breaking:** return plain code when highlighting fails in
   inline mode (instead of an empty string).
 
-## [3.6.0] - 2021-05-16
+## [3.6.0] - 2021-12-26
 * Update highlight.js to version 11. ([#22])
 
 ## [3.5.0] - 2021-05-16
