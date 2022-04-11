@@ -61,6 +61,17 @@ Or [kramdown IAL syntax](https://kramdown.gettalong.org/syntax.html#inline-attri
 If you do not specify a language, then highlight.js will attempt to
 guess the language if `auto` is true (which it is by default).
 
+### Usage with markdown-it-attrs
+
+If you use markdown-it-attrs, make sure to include it *after*
+markdown-it-highlightjs if you want inline code highlighting to work:
+
+```js
+const md = require('markdown-it')()
+  .use(require('markdown-it-highlightjs'), { inline: true })
+  .use(require('markdown-it-attrs'))
+```
+
 ## Provide the [highlight.js] instance
 
 You can specify the `hljs` option to override the default [highlight.js]
