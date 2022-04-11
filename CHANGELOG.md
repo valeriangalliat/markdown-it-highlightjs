@@ -65,7 +65,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.0.0] - 2015-03-17
 * Initial release.
 
-[Unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.0.1...HEAD
+[4.0.1]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.6.0...v4.0.0
 [3.6.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.5.0...v3.6.0
 [3.5.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.4.0...v3.5.0
