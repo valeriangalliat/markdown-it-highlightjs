@@ -62,7 +62,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.0.0] - 2015-03-17
 * Initial release.
 
-[Unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.6.0...HEAD
+[Unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.6.0...v4.0.0
 [3.6.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.5.0...v3.6.0
 [3.5.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.4.0...v3.5.0
 [3.4.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v3.3.1...v3.4.0
@@ -86,4 +87,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [#14]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/14
 [#15]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/15
 [#20]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/20
+[#21]: https://github.com/valeriangalliat/markdown-it-highlightjs/issues/21
 [#22]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/22
+[#24]: https://github.com/valeriangalliat/markdown-it-highlightjs/issues/24
+[#25]: https://github.com/valeriangalliat/markdown-it-highlightjs/issues/25
