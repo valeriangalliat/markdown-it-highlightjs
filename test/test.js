@@ -101,7 +101,7 @@ describe('markdown-it-highlightjs', () => {
   it('inline escape language class', () => {
     assert.equal(
       md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`{:."><img onerror=alert(1) src=.>js}'),
-      '<code class="hljs language-&quot;&gt;&lt;img onerror=alert(1) src=.&gt;js"></code>'
+      '<code class="hljs language-&quot;&gt;&lt;img onerror=alert(1) src=.&gt;js">console.log(42)</code>'
     )
   })
 

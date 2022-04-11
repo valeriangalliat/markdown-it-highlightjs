@@ -2,6 +2,7 @@ import MarkdownIt from 'markdown-it'
 import Renderer from 'markdown-it/lib/renderer'
 import StateCore from 'markdown-it/lib/rules_core/state_core'
 import Token from 'markdown-it/lib/token'
+import { escapeHtml } from 'markdown-it/lib/common/utils'
 import { HLJSApi, LanguageFn } from 'highlight.js'
 
 export interface HighlightOptions {
@@ -51,7 +52,7 @@ function highlight (hljs: HLJSApi, ignoreIllegals: boolean, code: string, lang: 
   try {
     return hljs.highlight(code, { language: lang !== '' ? lang : 'plaintext', ignoreIllegals }).value
   } catch (e) {
-    return ''
+    return escapeHtml(code)
   }
 }
 
@@ -64,7 +65,7 @@ function highlightAuto (hljs: HLJSApi, ignoreIllegals: boolean, code: string, la
   try {
     return hljs.highlightAuto(code).value
   } catch (e) {
-    return ''
+    return escapeHtml(code)
   }
 }
 // Wrap a render function to add `hljs` class to code blocks.
