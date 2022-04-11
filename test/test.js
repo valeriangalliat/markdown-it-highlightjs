@@ -2,6 +2,7 @@
 
 const { assert } = require('chai')
 const md = require('markdown-it')
+const attrs = require('markdown-it-attrs')
 const highlightjs = require('..')
 
 describe('markdown-it-highlightjs', () => {
@@ -123,5 +124,11 @@ describe('markdown-it-highlightjs', () => {
       md().use(highlightjs, { inline: true, auto: false }).renderInline('`console.log(42)`'),
       '<code class="hljs">console.log(42)</code>'
     )
+  })
+
+  it('inline works with markdown-it-attrs', () => {
+    assert.equal(
+      md().use(highlightjs, { inline: true }).use(attrs).renderInline('`console.log(42)`{.js}'),
+      '<code class="hljs language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">42</span>)</code>')
   })
 })
