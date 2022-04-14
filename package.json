@@ -12,9 +12,10 @@
   "scripts": {
     "build": "esbuild src/*.ts --format=cjs --outdir=dist",
     "lint": "ts-standard src/*.ts test/*.js",
-    "prepack": "npm run prepare && npm run lint && npm run type-check && npm test",
+    "prepack": "npm run prepare && npm run lint && npm run type-check && npm test && npm run test-ts-import",
     "prepare": "npm run build && npm run type-declarations",
     "test": "npm run build && mocha",
+    "test-ts-import": "ts-node test/types.ts",
     "type-check": "tsc -noEmit",
     "type-declarations": "tsc --project tsconfig.build.json --declaration --emitDeclarationOnly --outDir types"
   },
@@ -30,6 +31,7 @@
     "markdown-it": "^12.3.2",
     "markdown-it-attrs": "^4.1.3",
     "mocha": "^9.2.2",
+    "ts-node": "^10.7.0",
     "ts-standard": "^11.0.0",
     "typescript": "^4.6.3"
   }

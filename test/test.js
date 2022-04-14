@@ -3,7 +3,7 @@
 const { assert } = require('chai')
 const md = require('markdown-it')
 const attrs = require('markdown-it-attrs')
-const highlightjs = require('..')
+const highlightjs = require('markdown-it-highlightjs')
 
 describe('markdown-it-highlightjs', () => {
   it('throw when core called without `hljs` option', () => {
