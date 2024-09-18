@@ -71,8 +71,8 @@ function highlightAuto (md: MarkdownIt, hljs: HLJSApi, ignoreIllegals: boolean, 
 function wrapCodeRenderer (renderer: Renderer.RenderRule): Renderer.RenderRule {
   return function wrappedRenderer (...args) {
     return renderer(...args)
-      .replace('<code class="', '<code class="hljs ')
-      .replace('<code>', '<code class="hljs">')
+      .replace(/<code class="/g, '<code class="hljs ')
+      .replace(/<code>/g, '<code class="hljs">')
   }
 }
 

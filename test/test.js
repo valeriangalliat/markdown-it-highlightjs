@@ -131,4 +131,24 @@ describe('markdown-it-highlightjs', () => {
       md().use(highlightjs, { inline: true }).use(attrs).renderInline('`console.log(42)`{.js}'),
       '<code class="hljs language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">42</span>)</code>')
   })
+
+  it('applies hljs class to all code tags', () => {
+    // Define a mock plugin that handles the 'multicode' language
+    const multicodeHlJsPlugin = (md) => {
+      const oldHighlight = md.options.highlight
+      md.options.highlight = (code, lang, attrs) => {
+        if (lang && lang === 'multicode') {
+          return '<pre><code class="language-multicode">A</code><code class="language-multicode-overlay">B</code></pre>'
+        }
+
+        return oldHighlight(code, lang, attrs)
+      }
+    }
+
+    const markdownIt = md()
+    markdownIt.use(highlightjs)
+    markdownIt.use(multicodeHlJsPlugin)
+
+    assert.equal(markdownIt.render('```multicode\n```'), '<pre><code class="hljs language-multicode">A</code><code class="hljs language-multicode-overlay">B</code></pre>\n')
+  })
 })
