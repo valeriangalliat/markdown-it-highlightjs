@@ -10,9 +10,12 @@
 ```js
 const md = require('markdown-it')()
   .use(require('markdown-it-highlightjs'), opts)
-
-// All code blocks will be highlighted.
 ```
+
+This will process all code blocks with highlight.js to add `span`
+elements around grammatical keywords with specific classes, that can
+then be syled with CSS. You can find a list of preset highlighting
+styles [here](https://github.com/highlightjs/highlight.js/tree/main/src/styles).
 
 The `opts` object can contain:
 
