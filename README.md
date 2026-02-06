@@ -45,7 +45,7 @@ const md = require('markdown-it')()
 ```js
 const md = require('markdown-it')()
   .use(require('markdown-it-highlightjs'), {
-    register: {
+    registerAliases: {
       js: ['jquery', 'jqueryui']
     }
   })

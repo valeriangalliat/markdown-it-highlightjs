@@ -24,7 +24,7 @@ export interface HighlightOptions {
 
   /**
    * Adds new language alias or aliases to the library for the specified
-   * language name defined under ``lang`` key.
+   * language name defined under `lang` key.
    */
   registerAliases?: {
     [lang: string]: string | string[]
@@ -54,7 +54,7 @@ function registerLangs (hljs: HLJSApi, register: { [lang: string]: LanguageFn })
   }
 }
 
-// Allow registration of other languages.
+// Allow registration of aliases.
 function registerLangAliases (hljs: HLJSApi, register: { [lang: string]: string | string[] }): void {
   for (const [lang, aliases] of Object.entries(register)) {
     hljs.registerAliases(aliases, { languageName: lang })
