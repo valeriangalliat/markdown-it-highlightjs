@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [4.3.0] - 2026-02-06
+* Support registering language aliases with `registerAliases`. ([#37])
+
 ## [4.2.0] - 2024-09-18
 * Support multiple `<code>` tags in the same `<pre>`. ([#33], [#34])
 
@@ -71,7 +74,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.0.0] - 2015-03-17
 * Initial release.
 
-[Unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.2.0...HEAD
+[Unreleased]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.3.0...HEAD
+[4.3.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.2.0...v4.3.0
 [4.2.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.1.0...v4.2.0
 [4.1.0]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.0.1...v4.1.0
 [4.0.1]: https://github.com/valeriangalliat/markdown-it-highlightjs/compare/v4.0.0...v4.0.1
@@ -106,3 +110,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [#29]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/29
 [#33]: https://github.com/valeriangalliat/markdown-it-highlightjs/issues/33
 [#34]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/34
+[#37]: https://github.com/valeriangalliat/markdown-it-highlightjs/pull/37
