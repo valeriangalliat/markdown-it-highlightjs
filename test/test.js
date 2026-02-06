@@ -84,6 +84,24 @@ describe('markdown-it-highlightjs', () => {
 `)
   })
 
+  it('allow registering language aliases', () => {
+    assert.equal(
+      md().use(highlightjs, { registerAliases: { sql: 'test' } })
+        .render('```test\nSELECT * FROM TABLE;\n```'),
+    `<pre><code class="hljs language-test"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">TABLE</span>;
+</code></pre>
+`)
+  })
+
+  it('allow registering language aliases', () => {
+    assert.equal(
+      md().use(highlightjs, { registerAliases: { sql: ['test', 'db'] } })
+        .render('```db\nSELECT * FROM TABLE;\n```'),
+    `<pre><code class="hljs language-db"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">TABLE</span>;
+</code></pre>
+`)
+  })
+
   it('inline with Pandoc format', () => {
     assert.equal(
       md().use(highlightjs, { inline: true }).renderInline('`console.log(42)`{.js}'),

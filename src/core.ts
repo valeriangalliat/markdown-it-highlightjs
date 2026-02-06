@@ -23,6 +23,14 @@ export interface HighlightOptions {
   }
 
   /**
+   * Adds new language alias or aliases to the library for the specified
+   * language name defined under ``lang`` key.
+   */
+  registerAliases?: {
+    [lang: string]: string | string[]
+  }
+
+  /**
    * Whether to highlight inline code.
    */
   inline?: boolean
@@ -43,6 +51,13 @@ export interface HighlightOptions {
 function registerLangs (hljs: HLJSApi, register: { [lang: string]: LanguageFn }): void {
   for (const [lang, fn] of Object.entries(register)) {
     hljs.registerLanguage(lang, fn)
+  }
+}
+
+// Allow registration of other languages.
+function registerLangAliases (hljs: HLJSApi, register: { [lang: string]: string | string[] }): void {
+  for (const [lang, aliases] of Object.entries(register)) {
+    hljs.registerAliases(aliases, { languageName: lang })
   }
 }
 
@@ -140,6 +155,10 @@ export default function core (md: MarkdownIt, opts?: HighlightOptions): void {
 
   if (optsWithDefaults.register != null) {
     registerLangs(optsWithDefaults.hljs, optsWithDefaults.register)
+  }
+
+  if (optsWithDefaults.registerAliases != null) {
+    registerLangAliases(optsWithDefaults.hljs, optsWithDefaults.registerAliases)
   }
 
   md.options.highlight = (optsWithDefaults.auto ? highlightAuto : highlight).bind(null, md, optsWithDefaults.hljs, optsWithDefaults.ignoreIllegals)

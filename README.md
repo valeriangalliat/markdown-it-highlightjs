@@ -19,14 +19,15 @@ styles [here](https://github.com/highlightjs/highlight.js/tree/main/src/styles).
 
 The `opts` object can contain:
 
-| Name             | Type    | Description                                                                                                               | Default                   |
-|------------------|---------|---------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| `auto`           | boolean | Whether to automatically detect language if not specified.                                                                | `true`                    |
-| `code`           | boolean | Whether to add the `hljs` class to raw code blocks (not fenced blocks).                                                   | `true`                    |
-| `register`       | object  | Register other languages which are not included in the standard pack.                                                     | `null`                    |
-| `inline`         | boolean | Whether to highlight inline code.                                                                                         | `false`                   |
-| `hljs`           | object  | Provide the instance of [highlight.js] to use for highlighting                                                            | `require('highlight.js')` |
-| `ignoreIllegals` | boolean | Forces highlighting to finish even in case of detecting illegal syntax for the language instead of throwing an exception. | `true`                    |
+| Name              | Type    | Description                                                                                                               | Default                   |
+|-------------------|---------|---------------------------------------------------------------------------------------------------------------------------|---------------------------|
+| `auto`            | boolean | Whether to automatically detect language if not specified.                                                                | `true`                    |
+| `code`            | boolean | Whether to add the `hljs` class to raw code blocks (not fenced blocks).                                                   | `true`                    |
+| `register`        | object  | Register other languages which are not included in the standard pack.                                                     | `null`                    |
+| `registerAliases` | object  | Register aliases to languages which are included in the standard pack.                                                    | `null`                    |
+| `inline`          | boolean | Whether to highlight inline code.                                                                                         | `false`                   |
+| `hljs`            | object  | Provide the instance of [highlight.js] to use for highlighting                                                            | `require('highlight.js')` |
+| `ignoreIllegals`  | boolean | Forces highlighting to finish even in case of detecting illegal syntax for the language instead of throwing an exception. | `true`                    |
 
 ## Register languages
 
@@ -35,6 +36,17 @@ const md = require('markdown-it')()
   .use(require('markdown-it-highlightjs'), {
     register: {
       cypher: require('highlightjs-cypher')
+    }
+  })
+```
+
+## Register language aliases
+
+```js
+const md = require('markdown-it')()
+  .use(require('markdown-it-highlightjs'), {
+    register: {
+      js: ['jquery', 'jqueryui']
     }
   })
 ```
